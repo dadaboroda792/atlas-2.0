@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nodal Atlas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Nodal Atlas</h1>
+    <div class="toolbar">
+      <button data-tool="select">V Select</button>
+      <button data-tool="node">N Node</button>
+      <button data-tool="edge">E Edge</button>
+      <button data-tool="group">G Group</button>
+      <button data-tool="page">P Page</button>
+      <button id="toggleScratch">Scratch: off</button>
+    </div>
+    <div class="toolbar">
+      <button id="undoBtn">Undo</button>
+      <button id="redoBtn">Redo</button>
+      <button id="exportBtn">Export JSON</button>
+      <label class="importLabel">Import JSON<input id="importInput" type="file" accept="application/json" /></label>
+      <button id="clearBtn">Clear</button>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <p><strong>Hotkeys:</strong> V / N / E / G / P, Space-pan, Del, Ctrl+Z, Ctrl+Y</p>
+      <p>Ghost-link: в Edge-режиме тяните от ноды в пустое место.</p>
+      <p>Quick-mode: двойной клик по ноде для редактирования текста.</p>
+    </aside>
+    <section id="canvasWrap">
+      <svg id="edgeLayer"></svg>
+      <div id="canvas"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
